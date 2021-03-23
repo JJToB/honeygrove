@@ -194,7 +194,7 @@ class HTTPProtocol(Protocol):
             self.transport.write(message.encode('UTF-8'))
             log.request("HTTP", remote.host, remote.port, local.host, local.port, self.page, "", "GET")
             self.page = "404_login.html"
-            log.response("HTTP", remote.host, remote.port, local.host, local.port, self.page, login_string, "404 NOT FOUND")
+            log.response("HTTP", remote.host, remote.port, local.host, local.port, self.page, "", "404 NOT FOUND")
             self.transport.loseConnection()
 
     def connectionLost(self, reason):
